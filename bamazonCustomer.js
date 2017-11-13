@@ -77,13 +77,15 @@ function placeOrder() {
                         ],
                         function(error) {
                             if (error) throw err;
-                            console.log("-----------------------------------")
-                            console.log("-----------------------------------")
+                            console.log("-----------------------------------");
+                            console.log("-----------------------------------");
                             console.log("Order placed successfully!");
-                            console.log("-----------------------------------")
-                            console.log("-----------------------------------")
-                            placeOrder();
+                            console.log("Your total is: $" + (chosenItem.price * answer.quantity));
+                            console.log("-----------------------------------");
+                            console.log("-----------------------------------");
+                            // readAllProducts();
                             // start();
+                            placeOrder();
                         }
                     );
                 } else {
@@ -93,7 +95,7 @@ function placeOrder() {
                     console.log("Not enough in stock. Try again...");
                     console.log("-----------------------------------")
                     console.log("-----------------------------------")
-                    placeOrder();
+                    readAllProducts();
                 }
             });
     });
